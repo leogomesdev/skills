@@ -51,11 +51,12 @@ SkillController.updateSkill = async (req, res) => {
   try {
     const newValues = { $set: req.body.skill };
     const skill = await Skill.findByIdAndUpdate(req.params.skillId, newValues,
-      { runValidators: true, context: 'query' });
+      { runValidators: true, context: 'query', new: true });
 
     if (!skill) {
       return res.status(404).send();
     }
+
     return res.send({ skill });
   } catch (err) {
     return res.status(500).send(err);
