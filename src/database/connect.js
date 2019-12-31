@@ -1,19 +1,37 @@
 import mongoose from 'mongoose';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 
 mongoose.Promise = global.Promise;
 
-const connectToDb = async () => {
-  try {
-    await mongoose.connect("mongodb://10.13.0.5/myskills", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
-  }
-  catch (err) {
-    console.log(err);
-  }
+const mongod = new MongoMemoryServer();
+
+module.exports.connect = async () => {
+  const uri = await mongod.getConnectionString();
+
+  const mongooseOpts = {
+    useNewUrlParser: true,
+    autoReconnect: true,
+    reconnectTries: Number.MAX_VALUE,
+    reconnectInterval: 1000,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  };
+
+  await mongoose.connect(uri, mongooseOpts);
 }
 
-export default connectToDb;
+module.exports.closeDatabase = async () => {
+  await mongoose.connection.dropDatabase();
+  await mongoose.connection.close();
+  await mongod.stop();
+}
+
+module.exports.clearDatabase = async () => {
+  const collections = mongoose.connection.collections;
+
+  for (const key in collections) {
+    const collection = collections[key];
+    await collection.deleteMany();
+  }
+}

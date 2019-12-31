@@ -1,7 +1,7 @@
 {
   "name": "skills",
   "version": "1.0.0",
-  "description": "",
+  "description": "A REST CRUD build with Node.js",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -12,18 +12,23 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --runInBand ./test",
     "start": "babel-node src/index.js --presets env"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leogomezzz/skills.git"
   },
-  "keywords": [],
-  "author": "",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": ["skills", "REST", "API", "Node", "CRUD"],
+  "author": "Leonardo Gomes da Silva",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leogomezzz/skills/issues"

@@ -1,11 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import skills from './routes/skillsRoutes';
-import connectToDb from './database/connect';
+import { connect } from './database/connect';
 
 let app = express();
 
-connectToDb();
+connect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
