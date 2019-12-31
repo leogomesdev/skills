@@ -48,20 +48,20 @@ SkillController.updateSkill = async (req, res) => {
     return res.status(400).send({ error: "Malformed ID" });
   }
 
-  const skill = await Skill.findByIdAndUpdate(req.params.skillId, req.body.skill, { new: true }, function (error) {
-    if (error && error.message.indexOf('Cast to ObjectId failed') !== -1) {
-      return res.status(400).send({ error: "Malformed ID" });
-    }
-    if (error) {
-      return res.status(400).send(err);
-    }
-  });
+  try {
+    const newValues = { $set: req.body.skill };
+    const skill = await Skill.findByIdAndUpdate(req.params.skillId, newValues,
+      { runValidators: true, context: 'query' });
 
-  if (!skill) {
-    return res.status(404).send();
+    if (!skill) {
+      return res.status(404).send();
+    }
+    return res.send({ skill });
+  } catch (err) {
+    return res.status(500).send(err);
   }
 
-  return res.send({ skill });
+
 }
 
 SkillController.deleteSkill = async (req, res) => {
