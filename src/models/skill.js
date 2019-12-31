@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
+import HappyMongooseTimestamps from 'happy-mongoose-timestamps';
 
 const skillSchema = new Schema({
   name: {
@@ -17,9 +18,17 @@ const skillSchema = new Schema({
     default: Date.now
   },
   updatedAt: {
-    type: 'Date'
+    type: 'Date',
+    default: Date.now
   }
-});
+}, { timestamps: true });
+
+const options = {
+  blacklist: [],
+  shouldUpdateSchema: true
+}
+
+skillSchema.plugin(HappyMongooseTimestamps, options);
 
 let Skill = mongoose.model('Skill', skillSchema);
 
