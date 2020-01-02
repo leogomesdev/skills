@@ -85,6 +85,10 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
     }
     ````
 
+    ````bash
+    HTTP Code: 200 OK
+    ````
+
 - GET /api/skills/**skillId** -> Get a skill
   - Request body:
 
@@ -105,6 +109,10 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
         "__v":0
       }
     }
+    ````
+
+    ````bash
+    HTTP Code: 200 OK
     ````
 
 - POST /api/skills -> Create a skill
@@ -134,6 +142,10 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
     }
     ````
 
+    ````bash
+    HTTP Code: 201 Created
+    ````
+
 - PUT /api/skills/**skillId** -> Update a skill
   - Request body:
 
@@ -161,6 +173,10 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
     }
     ````
 
+    ````bash
+    HTTP Code: 200 OK
+    ````
+
 - DELETE /api/skills/**skillId** -> Delete a skill
   - Request body:
 
@@ -171,7 +187,7 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
   - Response sample:
 
     ````bash
-    200 OK (HTTP Code)
+    HTTP Code: 204 No Content
     ````
 
 ## Testing

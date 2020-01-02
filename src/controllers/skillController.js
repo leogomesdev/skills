@@ -30,7 +30,7 @@ SkillController.addSkill = async (req, res) => {
     if (err) {
       return res.status(400).send(err);
     }
-    return res.send({ skill });
+    return res.status(201).send({ skill });
   });
 }
 
@@ -65,7 +65,7 @@ SkillController.deleteSkill = async (req, res) => {
       return res.status(404).send();
     }
     skill.remove(() => {
-      return res.status(200).send();
+      return res.status(204).send();
     });
   });
 }
