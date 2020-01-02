@@ -7,12 +7,16 @@ This is a microservice to store skills data.
 - npm
 - Node.js (12+)
 
-### Node 13 and npm installation (for Linux Mint)
+### Local Node 13 and npm installation (for Linux Mint)
 
 ````bash
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt install nodejs
 ````
+
+### Running with Docker (local)
+
+Please, check [docs/installationWithDocker.md](docs/installationWithDocker.md)
 
 ## Technologies
 
