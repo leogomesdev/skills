@@ -18,8 +18,7 @@ const skillSchema = new Schema({
     default: Date.now
   },
   updatedAt: {
-    type: 'Date',
-    default: Date.now
+    type: 'Date'
   }
 }, { timestamps: true });
 
