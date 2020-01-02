@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-import HappyMongooseTimestamps from 'happy-mongoose-timestamps';
 
 const skillSchema = new Schema({
   name: {
@@ -26,8 +25,6 @@ const options = {
   blacklist: [],
   shouldUpdateSchema: true
 }
-
-skillSchema.plugin(HappyMongooseTimestamps, options);
 
 const Skill = mongoose.model('Skill', skillSchema);
 
