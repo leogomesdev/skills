@@ -29,6 +29,6 @@ const options = {
 
 skillSchema.plugin(HappyMongooseTimestamps, options);
 
-let Skill = mongoose.model('Skill', skillSchema);
+const Skill = mongoose.model('Skill', skillSchema);
 
 export default Skill;

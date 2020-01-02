@@ -7,12 +7,18 @@ This is a microservice to store skills data.
 - npm
 - Node.js (12+)
 
-### Node 13 + npm installation (for Linux Mint)
+### Node 13 and npm installation (for Linux Mint)
 
 ````bash
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt install nodejs
 ````
+
+## Technologies
+
+- [Express Framework](https://expressjs.com)
+- [Mongoose](https://mongoosejs.com)
+- [Chai](https://www.chaijs.com) and [Mocha](https://mochajs.org) for testing
 
 ## Usage
 
@@ -162,3 +168,22 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
     ````bash
     200 OK (HTTP Code)
     ````
+
+## Testing
+
+Run
+
+  ````bash
+  npm run test
+  ````
+
+## More
+
+- This application uses an in-memory database as default. Once restarting the app, all data will be lost.
+  - Optionally, it's possible to change to a persistent MongoDB database. Just copy the file below and define the environment variable MONGO_URI
+
+    ````bash
+    cp -v .env.example .env
+    ````
+
+- This application runs in 3000 port as default. To change it, change APP_PORT in .env file above  (as .env.example file)
