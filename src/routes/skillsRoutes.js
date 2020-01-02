@@ -1,28 +1,25 @@
 import { Router } from 'express';
 import SkillController from '../controllers/skillController';
+import validateIdMiddleware from '../middlewares/validateIdMiddleware';
 const router = new Router();
 
-// Get all Skills
 router.get('/skills', (req, res) => {
   SkillController.getAll(req, res);
 });
 
-// Get one skill by id
-router.get('/skills/:skillId', (req, res) => {
+router.get('/skills/:id', validateIdMiddleware, (req, res) => {
   SkillController.getSkill(req, res);
 });
 
-// Add a new Skill
 router.post('/skills', (req, res) => {
   SkillController.addSkill(req, res);
 });
 
-router.put('/skills/:skillId', (req, res) => {
+router.put('/skills/:id', validateIdMiddleware, (req, res) => {
   SkillController.updateSkill(req, res);
 });
 
-// Delete a skill by id
-router.delete('/skills/:skillId', (req, res) => {
+router.delete('/skills/:id', validateIdMiddleware, (req, res) => {
   SkillController.deleteSkill(req, res);
 });
 

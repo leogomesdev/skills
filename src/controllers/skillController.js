@@ -1,5 +1,4 @@
 import Skill from '../models/skill';
-import mongoose from 'mongoose';
 
 const SkillController = {};
 
@@ -13,11 +12,7 @@ SkillController.getAll = async (req, res) => {
 }
 
 SkillController.getSkill = async (req, res) => {
-  const validSkillId = mongoose.Types.ObjectId.isValid(req.params.skillId);
-  if (!validSkillId) {
-    return res.status(400).send({ error: "Malformed ID" });
-  }
-  await Skill.findById(req.params.skillId).exec((err, skill) => {
+  await Skill.findById(req.params.id).exec((err, skill) => {
     if (err) {
       return res.status(400).send(err);
     }
@@ -43,14 +38,10 @@ SkillController.updateSkill = async (req, res) => {
   if (!req.body.skill) {
     return res.status(400).send({ error: "No data sent" });
   }
-  const validSkillId = mongoose.Types.ObjectId.isValid(req.params.skillId);
-  if (!validSkillId) {
-    return res.status(400).send({ error: "Malformed ID" });
-  }
 
   try {
     const newValues = { $set: req.body.skill };
-    const skill = await Skill.findByIdAndUpdate(req.params.skillId, newValues,
+    const skill = await Skill.findByIdAndUpdate(req.params.id, newValues,
       { runValidators: true, context: 'query', new: true });
 
     if (!skill) {
@@ -66,11 +57,7 @@ SkillController.updateSkill = async (req, res) => {
 }
 
 SkillController.deleteSkill = async (req, res) => {
-  const validSkillId = mongoose.Types.ObjectId.isValid(req.params.skillId);
-  if (!validSkillId) {
-    return res.status(400).send({ error: "Malformed ID" });
-  }
-  await Skill.findById(req.params.skillId).exec((err, skill) => {
+  await Skill.findById(req.params.id).exec((err, skill) => {
     if (err) {
       return res.status(400).send(err);
     }
