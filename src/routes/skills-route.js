@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import SkillController from '../controllers/skillController';
-import validateIdMiddleware from '../middlewares/validateIdMiddleware';
+import SkillController from '../controllers/skill-controller';
+import validateIdMiddleware from '../middlewares/validateId-middleware';
 const router = new Router();
 
 router.get('/skills', (req, res) => {

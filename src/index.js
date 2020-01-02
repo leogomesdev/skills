@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
-import skills from './routes/skillsRoutes';
+import skills from './routes/skills-route';
 import { connect } from './database/connect';
 
 let app = express();

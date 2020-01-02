@@ -21,11 +21,6 @@ const skillSchema = new Schema({
   }
 }, { timestamps: true });
 
-const options = {
-  blacklist: [],
-  shouldUpdateSchema: true
-}
-
 const Skill = mongoose.model('Skill', skillSchema);
 
 export default Skill;
