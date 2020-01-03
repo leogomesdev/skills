@@ -1,25 +1,25 @@
 import Skill from '../models/skill';
 
-module.exports.listSkills = async () => {
+export async function listSkills() {
   const skill = await Skill.find({});
   return skill;
-};
+}
 
-module.exports.getSkill = async (id) => {
+export async function getSkill(id) {
   return await Skill.findById(id);
-};
+}
 
-module.exports.deleteSkill = async (id) => {
+export async function deleteSkill(id) {
   const skillDeleted = await Skill.findByIdAndDelete(id);
   return skillDeleted;
-};
+}
 
-module.exports.createSkill = async data => {
+export async function createSkill(data) {
   const skill = new Skill(data);
   return await skill.save();
-};
+}
 
-module.exports.updateSkill = async (id, data) => {
+export async function updateSkill(id, data) {
   const skill = await Skill.findByIdAndUpdate(id, { $set: data },
     { runValidators: true, context: 'query', new: true });
 

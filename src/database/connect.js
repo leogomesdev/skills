@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 const mongodb = new MongoMemoryServer();
 
-module.exports.connect = async () => {
+export async function connect() {
   const uri = process.env.MONGO_URI || await mongodb.getConnectionString();
 
   const mongooseOpts = {

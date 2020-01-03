@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 const mongoTestDb = new MongoMemoryServer();
 
-module.exports.connect = async () => {
+export async function connect() {
   const testUri = await mongoTestDb.getConnectionString();
 
   const mongooseTestingOpts = {
@@ -18,13 +18,13 @@ module.exports.connect = async () => {
   await mongoose.connect(testUri, mongooseTestingOpts);
 }
 
-module.exports.closeDatabase = async () => {
+export async function closeDatabase() {
   await mongoose.connection.dropDatabase();
   await mongoose.connection.close();
   await mongoTestDb.stop();
 }
 
-module.exports.clearDatabase = async () => {
+export async function clearDatabase() {
   const collections = mongoose.connection.collections;
 
   for (const key in collections) {
