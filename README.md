@@ -72,6 +72,6 @@ Run
     cp -v .env.example .env
     ````
 
-    - It's possible to use any MongoDB server (localhost, local server [a Docker container](https://hub.docker.com/_/mongo) or in cloud - [Try Free MongoDB Cloud](https://www.mongodb.com/cloud))
+    - It's possible to use any MongoDB server (localhost, local server, [a Docker container](https://hub.docker.com/_/mongo) or in cloud - [Try Free MongoDB Cloud](https://www.mongodb.com/cloud))
 
 - This application runs in 3000 port as default. To change it, change APP_PORT in .env file above  (as .env.example file)
