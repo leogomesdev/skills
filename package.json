@@ -15,6 +15,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/preset-env": "^7.7.7",
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "esm": "^3.2.25",
     "mocha": "^6.2.2",
     "mongodb-memory-server": "^6.2.1"

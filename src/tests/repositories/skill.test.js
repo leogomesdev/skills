@@ -2,7 +2,6 @@ import assert from 'assert';
 import * as skillRepository from '../../repositories/skill-repository';
 const dbHandler = require('../dbHandler');
 import * as factory from '../factories';
-import { expect } from 'chai';
 
 const oneHour = 60 * 60 * 1000;
 
