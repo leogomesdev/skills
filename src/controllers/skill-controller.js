@@ -7,7 +7,6 @@ SkillController.getAll = async (req, res) => {
     const data = await skillRepository.listSkills();
     res.status(200).send({ skills: data });
   } catch (error) {
-    console.log(error);
     res.status(500).send({ message: 'Error on loading data' });
   }
 };
@@ -20,7 +19,6 @@ SkillController.getSkill = async (req, res) => {
     }
     return res.send({ skill });
   } catch (error) {
-    console.log(error);
     res.status(500).send({ message: 'Error on loading data' });
   }
 };
@@ -60,7 +58,6 @@ SkillController.deleteSkill = async (req, res) => {
     }
     return res.status(204).send();
   } catch (error) {
-    console.log(error);
     res.status(500).send({ message: 'Error on processing data' });
   }
 };
