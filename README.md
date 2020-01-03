@@ -35,10 +35,10 @@ npm install
 Start the application:
 
 ````bash
-npm start
+npm run start
 ````
 
-Use Postman to use the API or any API consumer (such as Insommia). If you prefer, you can even use the curl command.
+Use [Postman](https://www.getpostman.com) to use the API or any API consumer (such as [Insomnia](https://insomnia.rest)). If you prefer, you can even use the curl command.
 
 **If you are using Postman, just import this file with examples of requests: [docs/skills.postman_collection.json](docs/skills.postman_collection.json)**
 
@@ -53,7 +53,7 @@ Use Postman to use the API or any API consumer (such as Insommia). If you prefer
 
 ### Routes
 
-Please check [docs/routes.md](docs/routes.md)
+Please check [docs/routes.md](docs/routes.md) to get all routes and examples of requests.
 
 ## Testing
 
@@ -71,5 +71,7 @@ Run
     ````bash
     cp -v .env.example .env
     ````
+
+    - It's possible to use any MongoDB server (localhost, local server [a Docker container](https://hub.docker.com/_/mongo) or in cloud - [Try Free MongoDB Cloud](https://www.mongodb.com/cloud))
 
 - This application runs in 3000 port as default. To change it, change APP_PORT in .env file above  (as .env.example file)

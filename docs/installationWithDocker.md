@@ -20,9 +20,3 @@
   ````bash
   docker-compose up --build
   ````
-
-- Running testes
-
-  ````bash
-  docker exec -it node-skills sh -c "npm run test"
-  ````
