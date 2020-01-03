@@ -7,7 +7,6 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongodb-memory-server": "^6.2.1",
     "mongoose": "^5.8.3"
   },
   "devDependencies": {
@@ -17,10 +16,11 @@
     "@babel/preset-env": "^7.7.7",
     "chai": "^4.2.0",
     "esm": "^3.2.25",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "mongodb-memory-server": "^6.2.1"
   },
   "scripts": {
-    "test": "mocha --require esm --recursive src/tests/** --exit",
+    "test": "mocha --require esm --recursive src/tests/**/*.js --exit --timeout 10000",
     "start": "babel-node ./src/index.js"
   },
   "repository": {
