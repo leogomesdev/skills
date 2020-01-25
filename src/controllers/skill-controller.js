@@ -37,10 +37,13 @@ SkillController.addSkill = async (req, res) => {
 
 SkillController.updateSkill = async (req, res) => {
   if (!req.body.skill) {
-    return res.status(400).send({ error: "No data sent" });
+    return res.status(400).send({ error: 'No data sent' });
   }
   try {
-    const skill = await skillRepository.updateSkill(req.params.id, req.body.skill)
+    const skill = await skillRepository.updateSkill(
+      req.params.id,
+      req.body.skill
+    );
     if (!skill) {
       return res.status(404).send();
     }

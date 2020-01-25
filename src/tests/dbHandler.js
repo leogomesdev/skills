@@ -12,7 +12,7 @@ export async function connect() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
   };
 
   await mongoose.connect(testUri, mongooseTestingOpts);

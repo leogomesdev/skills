@@ -23,6 +23,8 @@ Please, check [docs/installationWithDocker.md](docs/installationWithDocker.md)
 - [Express Framework](https://expressjs.com)
 - [Mongoose](https://mongoosejs.com)
 - [Chai](https://www.chaijs.com) and [Mocha](https://mochajs.org) for testing
+- [ECMAScript 6](http://es6-features.org/)
+- [JavaScript Standard Style](https://github.com/standard/standard), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
 ## Usage
 

@@ -1,34 +1,34 @@
 export function invalidSkill() {
   return {
     name: 'invalidSkill',
-    level: 'AAAA'
-  }
+    level: 'AAAA',
+  };
 }
 
 export function juniorSkill() {
   return {
     name: 'juniorSkill',
-    level: 'JUNIOR'
-  }
+    level: 'JUNIOR',
+  };
 }
 
 export function seniorSkill() {
   return {
     name: 'seniorSkill',
-    level: 'SENIOR'
-  }
+    level: 'SENIOR',
+  };
 }
 
 export function seniorSkillLowercase() {
   return {
     name: 'seniorSkill',
-    level: 'senior'
-  }
+    level: 'senior',
+  };
 }
 
 export function expertSkill() {
   return {
     name: 'expertSkill',
-    level: 'EXPERT'
-  }
+    level: 'EXPERT',
+  };
 }

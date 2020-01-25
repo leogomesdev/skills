@@ -16,9 +16,18 @@
     "@babel/preset-env": "^7.7.7",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "esm": "^3.2.25",
     "mocha": "^6.2.2",
-    "mongodb-memory-server": "^6.2.1"
+    "mongodb-memory-server": "^6.2.1",
+    "prettier": "^1.19.1"
   },
   "scripts": {
     "test": "mocha --require esm --recursive src/tests/**/*.js --exit --timeout 10000",

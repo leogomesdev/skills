@@ -4,19 +4,17 @@ import * as dotenv from 'dotenv';
 import skills from './routes/skills-route';
 import { connect } from './database/connect';
 
-let app = express();
+const app = express();
 
 dotenv.config();
 connect();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-
-app.get('/', (req, res) => {
-  res.send({ status: 'running' });
-});
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
 
 app.use('/api', skills);
 
