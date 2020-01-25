@@ -2,10 +2,11 @@
   "env": {
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
-  "extends": ["standard", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["standard", "prettier", "plugin:mocha/recommended"],
+  "plugins": ["prettier", "mocha"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
